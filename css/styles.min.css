@@ -50,11 +50,11 @@ h4 {
 }
 
 h5 {
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 300;
     color: #A17864;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-weight: bold
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif
 }
 
 h6 {
@@ -928,7 +928,7 @@ header .member-actions {
 }
 
 #ento p {
-    font-size: 7pt;
+    font-size: 8.5pt;
 }
 
 #other img,
