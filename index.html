@@ -92,10 +92,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/IAHd6EjpMU4??controls=0&autoplay=1&mute=0&playsinline=0&playlist=IAHd6EjpMU4&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <!--<iframe src="https://www.youtube.com/embed/IAHd6EjpMU4?controls=0&autoplay=1&mute=1&playsinline=0&playlist=IAHd6EjpMU4&loop=1"
-                                       id="youtubeframe" allowfullscreen="allowfullscreen"></iframe>    -->                
-                    </div>
+                        <div id="actual-video"></div>
                 </div>
             </div>
                             <!-- <div class="row">
@@ -727,6 +724,23 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
+
+        <div id="welcome-modal" class="modal fade stopscroll" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="section-padding">
+                            <p>Pop up</p>
+                           <button id="welcome-invite" class="btn-fill" type="button" data-dismiss="modal" aria-label="Close" onclick="unmute()">
+                                Open
+                            </button>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -825,6 +839,7 @@
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
+<script async src="https://www.youtube.com/iframe_api"></script>
 <script src="js/scripts.min.js"></script>
 <script src="js/masking-input.js" data-autoinit="true"></script>
 <script async defer
@@ -845,6 +860,31 @@
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
 </script>
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('actual-video', {
+            videoId: 'IAHd6EjpMU4',
+            playerVars: {
+            controls: 1,        // Show pause/play buttons in player
+            showinfo: 0,        // Hide the video title
+            modestbranding: 1,  // Hide the Youtube Logo
+            loop: 1,            // Run the video in a loop
+            fs: 0,              // Hide the full screen button
+            cc_load_policy: 0, // Hide closed captions
+            iv_load_policy: 3,  // Hide the Video Annotations
+            autohide: 0         // Hide video controls when playing
+            }
+        });
+    }
+
+    function unmute() {
+        player.playVideo();
+        player.unMute();
+    } 
+</script>
+
 </body>
 </html>
 

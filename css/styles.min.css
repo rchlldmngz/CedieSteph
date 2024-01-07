@@ -1235,7 +1235,9 @@ footer span.fa-heart {
 }
 
 body.modal-open {
-    padding-right: 0 !important
+    padding-right: 0 !important;
+    overflow: hidden;
+    position: fixed;
 }
 
 .modal-body {
