@@ -2,55 +2,69 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
 p {
-    font-size: 15px;
-    line-height: 29px;
+    font-size: 13px;
+    line-height: 20px;
     color: black;
     padding-bottom: 12px;
+    letter-spacing: .5px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+
+
 h1 {
-    font-size: 60px;
-    color: #93254F;
+    color: #A17864;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 55px;
+    font-family: 'aerotis', sans-serif;
+    padding-top: 40px;
+    font-style: italic;
+    text-shadow: 4px 4px 4px #aaa;
 }
 
 h2 {
-    font-size: 40px;
-    font-weight: 300;
-    color: black
+    font-size: 30px;
+    font-weight: 400;
+    color: #A17864;
+    font-style: italic;
+    font-family: 'Blooming Heart', sans-serif;
 }
 
 h3 {
-    color: #93254F;
     font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 29px
+    font-weight: 300;
+    color: #A17864;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif
 }
 
 h4 {
-    color: #93254F;
+    color: #A17864;
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 29px;
     padding-top: 40px;
+    font-family: 'Times New Roman', Times, serif
 }
 
 h5 {
-    font-size: 18px;
-    color: #93254F;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-weight: bold
+    font-size: 15px;
+    font-weight: 300;
+    color: #A17864;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif
 }
 
 h6 {
-    color: #93254F;
+    color: #A17864;
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0px;
-    line-height: 29px;
+    line-height: 55px;
     font-family: 'aerotis', sans-serif;
     padding-top: 40px;
                                                 
@@ -90,21 +104,21 @@ h6 {
 }
 /*submit*/
 .btn-fill {
-    color: #fff;
-    border: solid 2px #93254F;
+    color: white;
+    border: solid 2px #9E5E59;
     -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
     border-radius: 40px;
     display: inline-block;
     text-transform: uppercase;
-    background-color: #93254F
+    background-color: #9E5E59
 }
 
 .btn-fill:hover,
 .btn-fill:focus {
     color: black;
-    background-color: #cca371;
-    border-color: #cca371
+    background-color: #A17864;
+    border-color: #A17864
 }
 
 .btn-small {
@@ -135,13 +149,15 @@ h6 {
 }
 /*floating arrow bottom*/
 a {
-    color: #93254F;
+    color: #440606;
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
     -webkit-transition-property: color, border-color, background-color;
-    transition-property: color, border-color, background-color
+    transition-property: color, border-color, background-color;
+    text-transform: none;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a:hover,
@@ -155,8 +171,10 @@ body {
     font-weight: 300;
     color: black;
     -webkit-text-size-adjust: 100%;
-    background: white
-
+    background: url(../img/background.jpg), center, center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 *:focus {
@@ -409,8 +427,88 @@ section .header {
     transition: all 300ms ease-in-out
 }
 
-.hero {
-    min-height: 700px;
+.video-container{
+    width: 100vw;
+    height: 100vh;
+  }
+  
+#youtubeframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+  }
+  
+#mapframe {
+    max-width: 85%;
+    display: inline;
+}
+
+/*
+
+  @media (min-aspect-ratio: 16/9) {
+    .video-container iframe {
+      /* height = 100 * (9 / 16) = 56.25 */
+/*      height: auto;
+      
+    }
+  }
+      
+  @media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+      /* width = 100 / (9 / 16) = 177.777777 */
+ /*     width: auto;
+    }
+  }
+
+*/
+
+.video-wrapper {
+    position: relative; 
+    padding-bottom: 56.25%; /* 16:9 */  
+    padding-top: 25px;
+}
+
+.video-wrapper iframe {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+
+.video-background {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 70vh
+  }
+  
+  .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    .video-background iframe {
+      /* height = 100 * (9 / 16) = 56.25 */
+      height: 56.25vw;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-background iframe {
+      /* width = 100 / (9 / 16) = 177.777777 */
+      width: 177.78vh;
+    }
+  }
+  
+.hero 
+    min-height: 100px;
     background: url("../img/banner.png") center center;
     -webkit-background-size: contain;
     -moz-background-size: cover;
@@ -418,11 +516,12 @@ section .header {
     background-size: cover;
     position: relative;
     background-position: center;
-}
+
 /*floating Arrow top*/
 .hero .down-arrow a {
-    color: #cca371
+    color: white
 }
+
 /*not in use*/
 .hero h1 {
     color: rgb(243, 1, 1);
@@ -455,14 +554,14 @@ section .header {
 .fixed {
     padding: 0px 0px;
     position: fixed;
-    background-color: #ca3b72;
+    background-color: #372626df;
     z-index: 999;
     width: 100%
 }
 /*inner box of header*/
 header {
     padding: 10px 0px;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    border-bottom: solid 1px #372626df;
     position: relative;
     text-align: left;
     width: 100%;
@@ -830,10 +929,17 @@ header .member-actions {
     color: black
 }
 
-#safety img,
+#ento p {
+    font-size: 8.5pt;
+}
+
 #other img,
 #instagram img {
-    width: 200%;
+    width: 100%;
+}
+
+#safety img {
+    width: 300%;
 }
 
 #events img {
@@ -841,7 +947,19 @@ header .member-actions {
 }
 
 #swatches img {
-    width: 80%
+    width: 275px
+}
+
+#venue img {
+    width: 60%
+}
+
+#parents img {
+    width: 366px;
+}
+
+#date img {
+    width: 366px;
 }
 
 #swatches2 img {
@@ -849,11 +967,11 @@ header .member-actions {
 }
 
 #wear img {
-    width: 100%;
+    width: 40%;
 }
 
 #gift img {
-    width: 70%
+    width: 100%
 }
 
 #eng-pics img {
@@ -1009,7 +1127,7 @@ header .member-actions {
     padding: 15px 0;
     border-radius: 3px;
     width: 100%;
-    font-size: 13px
+    font-size: 13px;
 }
 
 .rsvp .rsvp-form .form-input-group {
@@ -1021,11 +1139,12 @@ header .member-actions {
     border-radius: 5px;
     border: solid 1px #E6E9EA;
     text-align: left;
-    position: relative
+    position: relative;
+   
 }
 /*RSVP Icons*/
 .rsvp .rsvp-form .form-input-group i {
-    color: #93254F;
+    color: #3d0505df;
     font-size: 14px
 }
 
@@ -1064,11 +1183,11 @@ header .member-actions {
 }
 /*Text in RSVP*/
 .rsvp .rsvp-form .form-input-group input::-webkit-input-placeholder {
-    color: #BCC1C3
+    color: #1e1f1f
 }
 
 .rsvp .rsvp-form .form-input-group input:-moz-placeholder {
-    color: #BCC1C3
+    color: #1e1f1f
 }
 
 .rsvp .rsvp-form .form-input-group input::-moz-placeholder {
@@ -1080,7 +1199,7 @@ header .member-actions {
 }
 
 footer .content {
-    border-top: 1px solid #eae6e6;
+    border-top: 1px solid #1e1f1f;
     padding-bottom: 10px
 }
 /*round with arrow at footer*/
@@ -1116,7 +1235,9 @@ footer span.fa-heart {
 }
 
 body.modal-open {
-    padding-right: 0 !important
+    padding-right: 0 !important;
+    overflow: hidden;
+    position: fixed;
 }
 
 .modal-body {
@@ -1127,20 +1248,31 @@ ol {
     padding-left: 35px;
 }
 
-
 strong {
-      Color: #93254F
-}
-
-iframe {
-    width: 100%;
+      Color: #855e4a;
+      font-family: 'Times New Roman', Times, serif;
 }
 
 #radio {
     text-align: left;
-    color: black;
+    text-indent: 3px;
+    color: black
 }
 
 .form-check-label {
     font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-indent: 3px;
 }
+@font-face {
+    font-family: 'Blooming Heart';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Blooming Heart'), url('https://fonts.cdnfonts.com/s/89308/BloomingheartRegular-mL7rG.woff') format('woff');
+}
+
+.inner {
+    margin-left: 30px;
+  }

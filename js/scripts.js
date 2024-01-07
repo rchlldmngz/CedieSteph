@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    $('#welcome-modal').modal({backdrop: 'static', keyboard: false});
+    $('#welcome-modal').modal('show');
+
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -185,20 +188,20 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Cris and Rose's Wedding",
+            title: "Cedie and Steph Wedding",
 
             // Event start date
-            start: new Date('April 17, 2022 15:30'),
+            start: new Date('July 26, 2024 14:00'),
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('April 17, 2022 21:00'),
+            end: new Date('July 26, 2024 21:00'),
 
             // Event Address
-            address: 'BLUE MOON LOS ILUSTRADOS, Silang, Cavite.',
+            address: 'CALERUEGA CHAPEL OF TRANSFIGURATION',
 
             // Event Description
-            description: "We can't wait to see you on our big day."
+            description: "We can't wait to see you there."
         }
     });
 
@@ -226,7 +229,7 @@ $(document).ready(function () {
         
         // if attending, validate invite code
 
-        $.post('https://script.google.com/macros/s/AKfycbwVBSF_9TTp6TSiO_Iw1SoPe5TRwtNBpa0I1owKGoYQgORz2YYXhdBHaX4rb6Do5vh5/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycby0-yuZWC-K03A8DE6FdgoAzFDum5Dcb8vTO8C3WS_W-IbJ7BywNwVzcljApW6tHOaThA/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
