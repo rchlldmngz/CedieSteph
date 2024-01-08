@@ -1251,7 +1251,12 @@ body.modal-open {
 }
 
 .modal-body {
-    padding: 25px
+    padding: 25px;
+}
+
+.modal-dialog {
+    top: 30%;
+    bottom: 50%;
 }
 
 ol {
@@ -1262,6 +1267,7 @@ strong {
       Color: #855e4a;
       font-family: 'Times New Roman', Times, serif;
 }
+
 
 #radio {
     text-align: left;
