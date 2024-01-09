@@ -229,7 +229,7 @@ $(document).ready(function () {
         
         // if attending, validate invite code
 
-        $.post('https://script.google.com/macros/s/AKfycby0-yuZWC-K03A8DE6FdgoAzFDum5Dcb8vTO8C3WS_W-IbJ7BywNwVzcljApW6tHOaThA/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbz5iKwud7DxiCb-o3TqIevW0ItqLJ2DgLaoKNi6s_WLdg0gbQqG8Uyc0rsjyLB8M3xZqQ/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
